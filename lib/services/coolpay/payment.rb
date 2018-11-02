@@ -7,11 +7,11 @@ module CoolpayService
     def list
       url = '/payments'
       begin
-        response = self.class.get(url, @options)
+        resp = self.class.get(url, options_with_token)
       rescue StandardError
         on_screen('Unexpected standard error')
       end
-      response&.success? ? json_body[:payments] : handle_error(response)
+      resp&.success? ? json_body(resp).fetch(:payments) : handle_error(resp)
     end
   end
 end

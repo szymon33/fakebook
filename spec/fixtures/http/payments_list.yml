@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coolpay.herokuapp.com/api/login
+    body:
+      encoding: UTF-8
+      string: '{"username":"SzymonM","apikey":"4C4205EC33D4F6CA"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 02 Nov 2018 15:29:27 GMT
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - 256f50fd-1fa0-4d35-8822-d24cdc424e11
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"6f88daa6-01ed-41f0-9b57-5b4315a11f1f"}'
+    http_version: 
+  recorded_at: Fri, 02 Nov 2018 15:29:28 GMT
+- request:
+    method: get
+    uri: https://coolpay.herokuapp.com/api/payments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer 6f88daa6-01ed-41f0-9b57-5b4315a11f1f
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 02 Nov 2018 15:29:27 GMT
+      Content-Length:
+      - '165'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - 618426da-c27d-4723-9a4b-3c846e859d06
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"payments":[{"status":"failed","recipient_id":"58adc45c-5eac-42a6-a55b-4becfb22a189","id":"2127842a-7401-40c4-bdac-f7148672bff1","currency":"GBP","amount":"10.5"}]}'
+    http_version: 
+  recorded_at: Fri, 02 Nov 2018 15:29:28 GMT
+recorded_with: VCR 4.0.0

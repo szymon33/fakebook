@@ -8,6 +8,19 @@ describe CoolpayService::Client do
 
   it { respond_to(:get) }
 
+  context '.bearer_token', vcr: { cassette_name: 'login' } do
+    subject { client.send(:bearer_token) }
+
+    it "call POST action with '/login' url" do
+      allow(client).to receive(:puts) # don't blur the output
+      expect(described_class).to receive(:post).with('/login', anything)
+      subject
+    end
+
+    it { is_expected.to be_a String }
+    it { is_expected.to_not be_empty }
+  end
+
   context '.on_screen' do
     it 'calls puts' do
       expect(client).to receive(:puts)
