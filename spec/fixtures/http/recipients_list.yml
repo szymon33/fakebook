@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coolpay.herokuapp.com/api/login
+    body:
+      encoding: UTF-8
+      string: '{"username":"SzymonM","apikey":"4C4205EC33D4F6CA"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 02 Nov 2018 18:34:38 GMT
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - f1e6752f-72c3-4fe7-a880-034c6017b1b8
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"40e06282-6e30-4c28-82cc-da3b5bfd11e9"}'
+    http_version: 
+  recorded_at: Fri, 02 Nov 2018 18:34:38 GMT
+- request:
+    method: get
+    uri: https://coolpay.herokuapp.com/api/recipients
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer 40e06282-6e30-4c28-82cc-da3b5bfd11e9
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 02 Nov 2018 18:34:38 GMT
+      Content-Length:
+      - '85'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - 5b80e34e-a668-45ab-aba4-73760f64922b
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"recipients":[{"name":"Jake McFriend","id":"58adc45c-5eac-42a6-a55b-4becfb22a189"}]}'
+    http_version: 
+  recorded_at: Fri, 02 Nov 2018 18:34:38 GMT
+recorded_with: VCR 4.0.0
