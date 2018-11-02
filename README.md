@@ -1,4 +1,4 @@
-# Fakebook - Ruby console proggram with API
+# Fakebook - Ruby console program which supports Coolpay API
 
 ## Introduction
 
@@ -30,7 +30,6 @@ This is a small app that uses Coolplay API in Ruby. The app is able do the follo
 You need to set the following envionmental variables before launching the app.
 
 ```
-  export COOLPAY_API_URI=https://coolpay.herokuapp.com/api
   export COOLPAY_USERNAME=<SzymonM>
   export COOLPAY_APIKEY=<your_private_api_key>
 ```
