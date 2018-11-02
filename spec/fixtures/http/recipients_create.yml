@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coolpay.herokuapp.com/api/login
+    body:
+      encoding: UTF-8
+      string: '{"username":"SzymonM","apikey":"4C4205EC33D4F6CA"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 02 Nov 2018 18:51:56 GMT
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - f38649d3-d00d-4b35-b0b4-c4df12a7f753
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"9c065b51-3e95-4db1-ab90-062b63aeb1e1"}'
+    http_version: 
+  recorded_at: Fri, 02 Nov 2018 18:51:56 GMT
+- request:
+    method: post
+    uri: https://coolpay.herokuapp.com/api/recipients
+    body:
+      encoding: UTF-8
+      string: '{"recipient":{"name":"James Bond"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer 9c065b51-3e95-4db1-ab90-062b63aeb1e1
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 02 Nov 2018 18:51:56 GMT
+      Content-Length:
+      - '79'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - 7af6d755-1622-44f0-a39d-00fdfd233248
+      Location:
+      - "/api/recipients/21aa16cd-cdd3-4983-ad9d-437908e69fcf"
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"recipient":{"name":"James Bond","id":"21aa16cd-cdd3-4983-ad9d-437908e69fcf"}}'
+    http_version: 
+  recorded_at: Fri, 02 Nov 2018 18:51:56 GMT
+recorded_with: VCR 4.0.0
