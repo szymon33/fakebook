@@ -12,13 +12,11 @@ module CoolpayService
 
     base_uri BASE_URI
 
+    headers 'Content-Type' => 'application/json'
+    headers 'Accept' => 'application/json'
+
     def initialize
-      @options = {
-        headers: {
-          'Content-Type' => 'application/json',
-          'Accept' => 'application/json'
-        }
-      }
+      @options = {}
       @bearer_token = nil
     end
 
@@ -45,17 +43,16 @@ module CoolpayService
     def bearer_token
       @bearer_token ||= begin
                           begin
-                            response = login
+                            resp = login
                           rescue StandardError
                             on_screen('Unexpected standard error')
                           end
-                          response&.success? ? json_body(response).fetch(:token) : handle_error(response)
+                          resp&.success? ? json_body(resp).fetch(:token) : handle_error(resp)
                         end
     end
 
-    def options_with_token
-      @options[:headers]['Authorization'] = "Bearer #{bearer_token}"
-      @options
+    def headers_token
+      { 'Authorization' => "Bearer #{bearer_token}" }
     end
 
     def login

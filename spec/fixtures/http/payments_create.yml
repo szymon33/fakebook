@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coolpay.herokuapp.com/api/login
+    body:
+      encoding: UTF-8
+      string: '{"username":"SzymonM","apikey":"4C4205EC33D4F6CA"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 02 Nov 2018 18:21:13 GMT
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - 0bcfbad3-f956-4cb7-b5a8-aeb0d580227f
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"1ac40152-3a11-4902-8e1e-685e62c66f2a"}'
+    http_version: 
+  recorded_at: Fri, 02 Nov 2018 18:21:13 GMT
+- request:
+    method: post
+    uri: https://coolpay.herokuapp.com/api/payments
+    body:
+      encoding: UTF-8
+      string: '{"payment":{"amount":123.45,"currency":"GBP","recipient_id":"58adc45c-5eac-42a6-a55b-4becfb22a189"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer 1ac40152-3a11-4902-8e1e-685e62c66f2a
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 02 Nov 2018 18:21:13 GMT
+      Content-Length:
+      - '168'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - e0445c24-3337-4c18-955c-333e848b3a90
+      Location:
+      - "/api/payments/b4e1629f-9558-4f53-bd75-600e46eb04e6"
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"payment":{"status":"processing","recipient_id":"58adc45c-5eac-42a6-a55b-4becfb22a189","id":"b4e1629f-9558-4f53-bd75-600e46eb04e6","currency":"GBP","amount":"123.45"}}'
+    http_version: 
+  recorded_at: Fri, 02 Nov 2018 18:21:13 GMT
+recorded_with: VCR 4.0.0

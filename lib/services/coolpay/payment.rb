@@ -4,14 +4,26 @@ require_relative 'client'
 
 module CoolpayService
   class Payment < Client
+    def initialize
+      @url = '/payments'
+    end
+
     def list
-      url = '/payments'
       begin
-        resp = self.class.get(url, options_with_token)
+        resp = self.class.get(@url, headers: headers_token)
       rescue StandardError
         on_screen('Unexpected standard error')
       end
       resp&.success? ? json_body(resp).fetch(:payments) : handle_error(resp)
+    end
+
+    def create(payment)
+      begin
+        resp = self.class.post(@url, headers: headers_token, body: payment.to_json)
+      rescue StandardError
+        on_screen('Unexpected standard error')
+      end
+      resp&.success? ? json_body(resp).fetch(:payment) : handle_error(resp)
     end
   end
 end
