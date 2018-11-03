@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 03 Nov 2018 14:37:41 GMT
+      - Sat, 03 Nov 2018 14:37:54 GMT
       Content-Length:
       - '48'
       Content-Type:
@@ -31,17 +31,17 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - e4ded4de-cd3b-4b7c-a090-b4aeb9ae0cae
+      - 63f1ef6f-5879-4406-9aad-190334e51198
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"b42cfc2f-8d28-48a0-9372-1ae0192add11"}'
+      string: '{"token":"b713d2cd-6706-4027-8d81-0b2e45936baa"}'
     http_version: 
-  recorded_at: Sat, 03 Nov 2018 14:37:42 GMT
+  recorded_at: Sat, 03 Nov 2018 14:37:55 GMT
 - request:
     method: get
-    uri: https://coolpay.herokuapp.com/api/recipients
+    uri: https://coolpay.herokuapp.com/api/recipients?name=James%20Bond
     body:
       encoding: US-ASCII
       string: ''
@@ -51,7 +51,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - Bearer b42cfc2f-8d28-48a0-9372-1ae0192add11
+      - Bearer b713d2cd-6706-4027-8d81-0b2e45936baa
   response:
     status:
       code: 200
@@ -62,9 +62,9 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 03 Nov 2018 14:37:41 GMT
+      - Sat, 03 Nov 2018 14:37:55 GMT
       Content-Length:
-      - '151'
+      - '82'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
@@ -72,13 +72,12 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - f9af3275-71df-4d89-a09c-1269d3600189
+      - 2484e991-1684-4cff-9dff-692f0468952b
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"recipients":[{"name":"Jake McFriend","id":"58adc45c-5eac-42a6-a55b-4becfb22a189"},{"name":"James
-        Bond","id":"21aa16cd-cdd3-4983-ad9d-437908e69fcf"}]}'
+      string: '{"recipients":[{"name":"James Bond","id":"21aa16cd-cdd3-4983-ad9d-437908e69fcf"}]}'
     http_version: 
-  recorded_at: Sat, 03 Nov 2018 14:37:42 GMT
+  recorded_at: Sat, 03 Nov 2018 14:37:55 GMT
 recorded_with: VCR 4.0.0

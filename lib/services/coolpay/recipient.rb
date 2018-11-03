@@ -8,9 +8,11 @@ module CoolpayService
       @url = '/recipients'
     end
 
-    def list
+    def list(name = nil)
       begin
-        resp = self.class.get(@url, headers: headers_token)
+        query = name.nil? ? nil : { name: name }
+        resp = self.class.get(@url,
+                              headers: headers_token, query: query)
       rescue StandardError
         on_screen('Unexpected standard error')
       end
