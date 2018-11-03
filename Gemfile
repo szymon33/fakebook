@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 source 'https://rubygems.org'
 
+gem 'highline'
 gem 'httparty'
 gem 'rake'
 gem 'rspec', '~>3.0'
