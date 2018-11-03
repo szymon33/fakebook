@@ -21,7 +21,7 @@ This is a small app that uses Coolplay API in Ruby. The app is able do the follo
 ## Installation
 
 ### Bundle
-```
+```console
    bundle install
 ```
 
@@ -29,12 +29,16 @@ This is a small app that uses Coolplay API in Ruby. The app is able do the follo
 
 You need to set the following envionmental variables before launching the app.
 
-```
+```console
   export COOLPAY_USERNAME=<SzymonM>
   export COOLPAY_APIKEY=<your_private_api_key>
 ```
 
 ## Running
+
+```console
+   >bin/fakebook
+```
 
 ## Automatic tests
 
