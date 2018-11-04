@@ -20,26 +20,6 @@ module CoolpayService
       @bearer_token = nil
     end
 
-    protected
-
-    def json_body(resp)
-      JSON.parse(resp.body, symbolize_names: true)
-    end
-
-    def handle_error(resp)
-      if resp
-        on_screen("Unexpected error #{resp.code}")
-      else
-        on_screen('Problem with connection to coolpay API')
-      end
-      nil
-    end
-
-    def on_screen(txt)
-      puts txt
-      nil
-    end
-
     def bearer_token
       @bearer_token ||= begin
                           begin
@@ -49,6 +29,26 @@ module CoolpayService
                           end
                           resp&.success? ? json_body(resp).fetch(:token) : handle_error(resp)
                         end
+    end
+
+    protected
+
+    def json_body(resp)
+      JSON.parse(resp.body, symbolize_names: true)
+    end
+
+    def handle_error(resp)
+      if resp
+        on_screen("API Coolpay Server unexpected error #{resp.code}")
+      else
+        on_screen('Problem with connection to coolpay API')
+      end
+      nil
+    end
+
+    def on_screen(txt)
+      puts txt
+      nil
     end
 
     def headers_token

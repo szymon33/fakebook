@@ -4,7 +4,8 @@ require_relative 'client'
 
 module CoolpayService
   class Payment < Client
-    def initialize
+    def initialize(bearer_token = nil)
+      @bearer_token = bearer_token
       @url = '/payments'
     end
 
@@ -19,7 +20,8 @@ module CoolpayService
 
     def create(payment)
       begin
-        resp = self.class.post(@url, headers: headers_token, body: payment.to_json)
+        resp = self.class.post(@url,
+                               headers: headers_token, body: payment.to_json)
       rescue StandardError
         on_screen('Unexpected standard error')
       end
