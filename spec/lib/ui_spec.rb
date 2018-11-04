@@ -4,9 +4,12 @@ require 'ui'
 
 describe Ui do
   describe 'when initialized' do
-    it 'has coolpay client assigned' do
-      coolpay = subject.instance_variable_get('@coolpay')
-      expect(coolpay).to be_a CoolpayService::Client
+    it 'has coolpay token assigned' do
+      allow_any_instance_of(CoolpayService::Client)
+        .to receive(:bearer_token)
+        .and_return('La La Land')
+      coolpay = subject.instance_variable_get('@token')
+      expect(coolpay).to eq 'La La Land'
     end
   end
 end
