@@ -8,7 +8,7 @@ You work for Fakebook, a successful social network. You’ve been tasked to inte
 
 You can find Coolpay documentation here: http://docs.coolpayapi.apiary.io/
 
-This is a small app that uses Coolplay API in Ruby. The app is able do the following:
+This is a small app that uses Coolplay API in Ruby. The app is able to do the following:
 
 1. Authenticate to Coolpay API
 
@@ -27,7 +27,7 @@ This is a small app that uses Coolplay API in Ruby. The app is able do the follo
 
 ### Environment variables for Coolpay API
 
-You need to set the following envionmental variables before launching the app.
+You need to set the following environment variables before launching the app.
 
 ```console
   export COOLPAY_USERNAME=<SzymonM>
@@ -43,10 +43,32 @@ You need to set the following envionmental variables before launching the app.
 ## Automatic tests
 
 ### Rspec
-```
+```console
    bundle exec rspec
 ```   
 
 ## Screenshots
 
-[November, 2018]
+**Main menu**
+
+![Screentshot1](screenshots/main-menu.png)
+
+**Create Recipient**
+
+![Screentshot2](screenshots/create-recipient.png)
+
+**Send money first step. Find recipient.**
+
+![Screentshot3](screenshots/send-money-find-recipient.png)
+
+**Send money with success**
+
+![Screentshot4](screenshots/send-money-form.png)
+
+**Check all payments**
+
+![Screentshot3](screenshots/check-all-payments.png)
+
+
+
+[November 2018]
