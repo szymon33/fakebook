@@ -67,8 +67,11 @@ You need to set the following environment variables before launching the app.
 
 **Check all payments**
 
-![Screentshot3](screenshots/check-all-payments.png)
+![Screentshot5](screenshots/check-all-payments.png)
 
+**Send money with validation error**
+
+![Screentshot6](screenshots/with-validation-error.png)
 
 
 [November 2018]

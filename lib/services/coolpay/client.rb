@@ -39,7 +39,11 @@ module CoolpayService
 
     def handle_error(resp)
       if resp
-        on_screen("API Coolpay Server unexpected error #{resp.code}")
+        if resp.code == 422 && resp['errors']
+          puts "API Coolpay validation errors #{resp['errors']}"
+        else
+          on_screen("API Coolpay Server unexpected error #{resp.code}")
+        end
       else
         on_screen('Problem with connection to coolpay API')
       end
