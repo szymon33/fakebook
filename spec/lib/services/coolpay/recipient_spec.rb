@@ -21,6 +21,12 @@ describe CoolpayService::Recipient do
       expect(described_class).to receive(:get).with('/recipients', anything)
       subject
     end
+
+    it 'carries on with existing token' do
+      token = CoolpayService::Client.new.bearer_token
+      recipients = described_class.new(token)
+      expect(recipients.list).to be_a Array
+    end
   end
 
   context '.create', vcr: { cassette_name: 'recipients_create',
