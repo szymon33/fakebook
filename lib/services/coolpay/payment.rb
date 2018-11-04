@@ -18,10 +18,10 @@ module CoolpayService
       resp&.success? ? json_body(resp).fetch(:payments) : handle_error(resp)
     end
 
-    def create(payment)
+    def create(attrs)
       begin
         resp = self.class.post(@url,
-                               headers: headers_token, body: payment.to_json)
+                               headers: headers_token, body: attrs.to_json)
       rescue StandardError
         on_screen('Unexpected standard error')
       end

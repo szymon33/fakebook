@@ -101,7 +101,7 @@ class Ui
   def payment_form(recipient)
     return unless recipient
 
-    result = { recipient_id: recipient[:recipient_id] }
+    result = { recipient_id: recipient[:id] }
     title("Send money: Step 2 - Payment details for #{recipient[:name]}")
     result[:amount] = ask('Amount?  ', Float) do |q|
       q.validate = ->(p) { p.to_f.positive? }
