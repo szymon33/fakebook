@@ -155,16 +155,11 @@ class Ui
     if list.empty?
       say('There are no records to be shown')
     else
-      first_row = []
-      layout.each { |k, v| first_row << k.to_s.rjust(v) }
-      puts first_row.join
-
+      puts list.first.keys.map { |k| k.to_s.rjust(layout[k]) }.join
       puts (list.map do |row|
-        temp = []
-        row.each do |key, value|
-          (temp << value.to_s.rjust(layout[key])) if layout[key]
-        end
-        temp.join
+        row.map do |k, v|
+          v.to_s.rjust(layout[k]) if layout[k]
+        end.compact.join
       end)
     end
   end
